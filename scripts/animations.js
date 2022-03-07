@@ -65,72 +65,83 @@ setTimeout(function() {
 
 
 */
+let displayClickAnywhereTextcounter = 0;
+let firstAnimComplete = false;
+
 let displayClickAnywhereText = () => {
-    let count = 0;
     let clickAnywhereText = document.getElementById("click-anywhere-text");
-let displayClickAnywhereTextInterval = setInterval(function(){
-    count++;
-    if (count%2==0){
+    displayClickAnywhereTextcounter++;
+    if (displayClickAnywhereTextcounter%2==0){
         clickAnywhereText.style.opacity = "100%";
     }
     else {
         clickAnywhereText.style.opacity = "0%";
     }
-}, 1000);
-    }
+}
+
+let timer = setInterval(displayClickAnywhereText, 1000);
+
 
 let hideClickAnywhereText = () => {
     let clickAnywhereText = document.getElementById("click-anywhere-text");
     clickAnywhereText.style.display = "none";
 }
 
+
+
 let showNameWrap = () => {
    let nameWrap = document.getElementById("name-wrap");
     nameWrap.style.display = "inline";
 }
 
-displayClickAnywhereText();
 
-let textAnimMain = (string, divid, wrapDivName, timeout) => {
+let pulsateUnderscoreInitial = (letters, letterIndex) => {
+    let count = 0;
+    let editText = () => {
+        if(count==4){        
+            clearInterval(timer);
+        }
+       if(count%2==0){
+            letters[letterIndex].textContent = "";
+        }
+        else{letters[letterIndex].textContent = "_"}
+
+        count++;
+
+    }
+    let timer = setInterval(editText, 800)
+}
+
+let pulsateUnderscoreFinal = (letters, letterIndex) => {
+    let keyboardsound = new Audio('./sound files/mechanicalkey.wav');
+    let count = 0
+    let editText = () => {
+        count++;
+        if(count==4){
+            console.log(count);
+            keyboardsound.play();
+            clearInterval(timer);
+            firstAnimComplete = true;
+        }
+        if(count%2==0){
+            letters[letterIndex].textContent = "";
+        }else{letters[letterIndex].textContent = "_"}
+    }
+    let timer = setInterval(editText, 600);
+}
+
+let generateSpans = (string, divid) => {
+    const div = document.getElementById(divid);
+    for(let i=0; i<string.length+1; i++){
+    const newSpan = document.createElement("span");
+    div.appendChild(newSpan);
+    }
+}
+
+
+let textAnimMain = (string, wrapDivName, timeout) => {
 
     let keyboardsound = new Audio('./sound files/mechanicalkey.wav');
-    let pulsateUnderscore = (letters, letterIndex) => {
-        let count = 0;
-        let editText = setInterval(function(){
-            if(count==4){
-                console.log(count);
-                keyboardsound.play();
-                clearInterval(editText);
-            }
-            if(count%2==0){
-                letters[letterIndex].textContent = "";
-            }else{letters[letterIndex].textContent = "_"}
-            count++;
-        }, 600);
-    }
-
-    let pulsateUnderscoreInitial = (letters, letterIndex) => {
-        let count = 0;
-        let editText = setInterval(function(){
-            if(count==6){        
-                clearInterval(editText);
-            }
-            if(count%2==0){
-                letters[letterIndex].textContent = "";
-            }else{letters[letterIndex].textContent = "_"}
-            count++;
-        }, 800);
-    }
-
-
-    let generateSpans = (string, divid) => {
-        const div = document.getElementById(divid);
-        for(let i=0; i<string.length+1; i++){
-        const newSpan = document.createElement("span");
-        div.appendChild(newSpan);
-        }
-    }
-
     let wrapDiv = document.getElementById(wrapDivName);
 
     generateSpans(string, wrapDivName);
@@ -143,7 +154,7 @@ let textAnimMain = (string, divid, wrapDivName, timeout) => {
     let generateTextAnim = (letters, text) => {
         let i = 0;
         letters[i].textContent = "_"
-    let changeText = setInterval(function(){
+    let changeText = () => {
 
             console.log(i);
             console.log(text.length);
@@ -155,11 +166,11 @@ let textAnimMain = (string, divid, wrapDivName, timeout) => {
             i++
             if(i == text.length){
                 console.log("i is " + i);
-                clearInterval(changeText);
-                pulsateUnderscore(letters, i);
+                clearInterval(timer);
+                pulsateUnderscoreFinal(letters, i);
             }
-        
-        }, 500);
+        }
+        let timer =  setInterval(changeText, 500);
     }
 
     setTimeout(function() {
@@ -182,6 +193,8 @@ window.onload = function () {
         localStorage.setItem("hasCodeRunBefore", true);
     }
 }*/
+
+
 let clickCount = 0;
 
 document.onclick = function(){
@@ -191,10 +204,26 @@ clickCount++;
     if (clickCount == 1){
         hideClickAnywhereText();
         showNameWrap();
-        textAnimMain("Fernando Marturet", "name-wrap", "name-wrap", 5500);
+        textAnimMain("Fernando Marturet", "name-wrap", 4800);
     }
     else {return;}
 }
+
+let triggerSecondAnim = () => {
+    if(firstAnimComplete == true){
+        console.log("whoo");
+        clearInterval(waitForFirstAnimTimer);
+        
+    }
+}
+
+let waitForFirstAnimTimer = setInterval(triggerSecondAnim, 100);
+
+let moveNameText = () => {
+    let nameText = document.getElementById('name-wrap');
+    nameText
+}
+
 
 /*
 textAnimMain("Projects", "projects-wrap", "projects-wrap", 1000);
