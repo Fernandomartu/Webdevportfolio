@@ -1,70 +1,4 @@
-/* Titles slow type animation */
-/*
-let generateSpans = (string, divid) => {
-    const div = document.getElementById(divid);
-    for(let i=0; i<string.length+1; i++){
-    const newSpan = document.createElement("span");
-    div.appendChild(newSpan);
-    }
-}
 
-
-
-let projectWrapDiv = document.getElementById("projects-wrap");
-let projectLetters = projectWrapDiv.getElementsByTagName('span');
-let projectText = "Projects";
-
-
-let resumeWrapDiv = document.getElementById("resume-wrap");
-let resumeLetters = resumeWrapDiv.getElementsByTagName('span');
-let resumeText = "Resume";
-
-let orderNowWrapDiv = document.getElementById("ordernow-wrap");
-let orderNowLetters = orderNowWrapDiv.getElementsByTagName('span');
-let orderNowText = "Order Now";
-
-
-generateSpans(resumeText, "resume-wrap");
-generateSpans(projectText, "projects-wrap");
-generateSpans(orderNowText, "ordernow-wrap");
-
-let generateTextAnim = (letters, text) => {
-    let i = 0;
-    letters[i].textContent = "_"
-let changeText = setInterval(function(){
-    
-        console.log(i);
-        console.log(text.length);
-        letters[i].style.display = "inline";
-        letters[i].textContent = text[i];
-        letters[i+1].textContent = "_";
-        letters[i+1].style.display = "inline";
-        i++
-        if(i == text.length){
-            letters[i].textContent = text[i];
-            console.log("i is " + i);
-            clearInterval(changeText);
-        }
-    
-    }, 200);
-}
-
-
-
-setTimeout(function() {
-    generateTextAnim(projectLetters, projectText);
-}, 1000);
-
-setTimeout(function() {
-    generateTextAnim(resumeLetters, resumeText);
-}, 3000);
-
-setTimeout(function() {
-    generateTextAnim(orderNowLetters, orderNowText);
-}, 5000);
-
-
-*/
 let displayClickAnywhereTextcounter = 0;
 let firstAnimComplete = false;
 
@@ -81,6 +15,11 @@ let displayClickAnywhereText = () => {
 
 let timer = setInterval(displayClickAnywhereText, 1000);
 
+let loadNextAnim = () => {
+    const script = document.createElement('script');
+    script.src = './scripts/linesanimations.js';
+    document.head.prepend(script);
+    }
 
 let hideClickAnywhereText = () => {
     let clickAnywhereText = document.getElementById("click-anywhere-text");
@@ -127,7 +66,7 @@ let pulsateUnderscoreFinal = (letters, letterIndex) => {
             letters[letterIndex].textContent = "";
         }else{letters[letterIndex].textContent = "_"}
     }
-    let timer = setInterval(editText, 600);
+    let timer = setInterval(editText, 800);
 }
 
 let generateSpans = (string, divid) => {
@@ -179,22 +118,6 @@ let textAnimMain = (string, wrapDivName, timeout) => {
 
 }
 
-
-/*
-window.onload = function () {
-    if (localStorage.getItem("hasCodeRunBefore") === null) {
-        document.onmousemove = function(){
-            clickCount++
-        if (clickCount == 1){
-        textAnimMain("Fernando Marturet", "name-wrap", "name-wrap", 500);
-        }
-        else{return;}
-        }
-        localStorage.setItem("hasCodeRunBefore", true);
-    }
-}*/
-
-
 let clickCount = 0;
 
 document.onclick = function(){
@@ -211,9 +134,8 @@ clickCount++;
 
 let triggerSecondAnim = () => {
     if(firstAnimComplete == true){
-        console.log("whoo");
         clearInterval(waitForFirstAnimTimer);
-        
+        loadNextAnim();
     }
 }
 
@@ -224,11 +146,5 @@ let moveNameText = () => {
     nameText
 }
 
-
-/*
-textAnimMain("Projects", "projects-wrap", "projects-wrap", 1000);
-textAnimMain("Resume", "resume-wrap", "resume-wrap", 3000);
-textAnimMain("Order Now", "ordernow-wrap", "ordernow-wrap", 5000);
-*/
 
 
