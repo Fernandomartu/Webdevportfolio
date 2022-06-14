@@ -63,7 +63,7 @@ let pulsateUnderscoreFinal = (letters, letterIndex) => {
             firstAnimComplete = true;
         }
         if(count%2==0){
-            letters[letterIndex].textContent = "";
+            letters[letterIndex].textContent = " ";
         }else{letters[letterIndex].textContent = "_"}
     }
     let timer = setInterval(editText, 800);

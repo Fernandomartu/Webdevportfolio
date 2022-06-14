@@ -33,23 +33,29 @@
     transition: ease-out 400ms;
 }
 
-#left-column-wrap {
-    position: absolute;
-    top: 20%;
-    left: 20%;
+
+#main-body-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+#name-desc-wrap {
+    display: grid;
+    width: 100%;
+    justify-content: center;
     transition: all 5s linear;
 }
 
 #name-wrap {
-    position: relative;
     display: none;
     font-size: 80px;
     color: #00FF41;
-    transition: all 5s linear;
+    white-space: pre-wrap;
+    transition: 3s;
 }
 
 #description-paragraph-wrap {
-    position: relative;
     display: none;
     font-size: 20px;
     color: #00FF41;
@@ -59,6 +65,9 @@
     width: 800px;
 }
 
+.test-wrap {
+    background-color: green;
+}
 
 .projects-main-wrap {
     display: none;
