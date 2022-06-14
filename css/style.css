@@ -5,17 +5,31 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+.header-grid-main-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 60%;
+    grid-template-rows: 50px;
+}
+
+.header-left-column {
+    background-color: blue;
+}
+
+.header-right-column {
+    background-color: blue;
+}
+
 .click-anywhere-wrap {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    width: 900px;
-    height: 200px;
+    display: grid;
     font-size: 20px;
     color: #00FF41;
+    justify-content: center;
+    margin-top: 15%;
 }
 
 #click-anywhere-text {
+    font-family: 'Courier New', Courier, monospace;
     transition: ease-out 400ms;
 }
 

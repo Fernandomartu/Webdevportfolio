@@ -8,7 +8,6 @@ let moveNameWrap = () => {
     song.play();
     leftColumnWrap.style.left = '150px';
     nameWrap.style.fontSize = "50px";
-    descriptionParagraph.style.display = "inline";
 
 }
 
