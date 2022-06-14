@@ -31,7 +31,6 @@
     display: none;
     font-size: 80px;
     color: #00FF41;
-    margin-bottom: -100;
     transition: all 5s linear;
 }
 
@@ -40,7 +39,6 @@
     display: none;
     font-size: 20px;
     color: #00FF41;
-    margin-top: -100;
 }
 
 #description-paragraph {
