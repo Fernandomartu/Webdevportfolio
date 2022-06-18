@@ -15,7 +15,7 @@ let moveNameWrap = () => {
 
 let loadNextAnim = () => {
     const script = document.createElement('script');
-    script.src = './scripts/scrambleTextAnimation.js';
+    script.src = './scripts/test.js';
     document.head.prepend(script);
     }
 
