@@ -1,7 +1,8 @@
 
-let displayClickAnywhereTextcounter = 0;
+/*let displayClickAnywhereTextcounter = 0;*/
 let firstAnimComplete = false;
 
+/*
 let displayClickAnywhereText = () => {
     let clickAnywhereText = document.getElementById("click-anywhere-text");
     displayClickAnywhereTextcounter++;
@@ -14,25 +15,26 @@ let displayClickAnywhereText = () => {
 }
 
 let timer = setInterval(displayClickAnywhereText, 1000);
-
+*/
 let loadNextAnim = () => {
     const script = document.createElement('script');
     script.src = './scripts/linesanimations.js';
     document.head.prepend(script);
     }
 
+    /*
 let hideClickAnywhereText = () => {
     let clickAnywhereText = document.getElementById("click-anywhere-text");
     clickAnywhereText.style.display = "none";
 }
+*/
 
-
-
+/*
 let showNameWrap = () => {
-   let nameWrap = document.getElementById("name-wrap");
-    nameWrap.style.display = "inline";
+    let mainBodyWrap = document.getElementById("main-body-wrap");
+    mainBodyWrap.style.display = "grid";
 }
-
+*/
 
 let pulsateUnderscoreInitial = (letters, letterIndex) => {
     let count = 0;
@@ -41,9 +43,12 @@ let pulsateUnderscoreInitial = (letters, letterIndex) => {
             clearInterval(timer);
         }
        if(count%2==0){
+        letters[letterIndex].style.opacity = "1";
             letters[letterIndex].textContent = "";
         }
-        else{letters[letterIndex].textContent = "_"}
+        else{
+            letters[letterIndex].style.opacity = "1";
+            letters[letterIndex].textContent = "_"}
 
         count++;
 
@@ -52,13 +57,19 @@ let pulsateUnderscoreInitial = (letters, letterIndex) => {
 }
 
 let pulsateUnderscoreFinal = (letters, letterIndex) => {
-    let keyboardsound = new Audio('./sound files/mechanicalkey.wav');
+    /*let keyboardsound = new Audio('./sound files/mechanicalkey.wav');*/
+    
     let count = 0
     let editText = () => {
+        let nameWrap = document.getElementById("name-wrap");
+        let nameSpans = nameWrap.children;
         count++;
         if(count==4){
             console.log(count);
-            keyboardsound.play();
+            /*keyboardsound.play();*/
+            for(let i=0; i<nameSpans.length; i++){
+            nameSpans[i].style.color = "#00FF41";
+            }
             clearInterval(timer);
             firstAnimComplete = true;
         }
@@ -74,13 +85,14 @@ let generateSpans = (string, divid) => {
     for(let i=0; i<string.length+1; i++){
     const newSpan = document.createElement("span");
     div.appendChild(newSpan);
+    newSpan.setAttribute("id", "name-spans");
     }
 }
 
 
 let textAnimMain = (string, wrapDivName, timeout) => {
 
-    let keyboardsound = new Audio('./sound files/mechanicalkey.wav');
+    /* let keyboardsound = new Audio('./sound files/mechanicalkey.wav');*/
     let wrapDiv = document.getElementById(wrapDivName);
 
     generateSpans(string, wrapDivName);
@@ -99,9 +111,11 @@ let textAnimMain = (string, wrapDivName, timeout) => {
             console.log(text.length);
             letters[i].style.display = "inline";
             letters[i].textContent = text[i];
-            keyboardsound.play();
+            /*keyboardsound.play();*/
+            letters[i+1].style.opacity = "1";
             letters[i+1].textContent = "_";
             letters[i+1].style.display = "inline";
+            
             i++
             if(i == text.length){
                 console.log("i is " + i);
@@ -109,7 +123,7 @@ let textAnimMain = (string, wrapDivName, timeout) => {
                 pulsateUnderscoreFinal(letters, i);
             }
         }
-        let timer =  setInterval(changeText, 500);
+        let timer =  setInterval(changeText, 400);
     }
 
     setTimeout(function() {
@@ -118,7 +132,7 @@ let textAnimMain = (string, wrapDivName, timeout) => {
 
 }
 
-let clickCount = 0;
+/*let clickCount = 0;
 
 document.onclick = function(){
    
@@ -131,6 +145,8 @@ clickCount++;
     }
     else {return;}
 }
+*/
+textAnimMain("Fernando Marturet", "name-wrap", 4800);
 
 let triggerSecondAnim = () => {
     if(firstAnimComplete == true){
@@ -141,10 +157,6 @@ let triggerSecondAnim = () => {
 
 let waitForFirstAnimTimer = setInterval(triggerSecondAnim, 100);
 
-let moveNameText = () => {
-    let nameText = document.getElementById('name-wrap');
-    nameText
-}
 
 
 
