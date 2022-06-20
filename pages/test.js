@@ -34,7 +34,7 @@ let rearrange = () => {
 
 textScrambler("test message");
 */
-
+let message1 = "test message";
 let message = "Web developer. Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
 let parentDiv = document.getElementById("description-paragraph-wrap");
 let generateSpans = (string) => {
@@ -49,7 +49,7 @@ let generateSpans = (string) => {
 
     
 let textScrambler = (message) => {
-
+    console.log(message.length/2);
     let parentDiv = document.getElementById("description-paragraph-wrap");
 
  
@@ -81,14 +81,32 @@ let iterator = Math.floor(Math.random()*message.length);
 let changeSpans = (message, iterator) => {
     let parentDiv = document.getElementById("description-paragraph-wrap");
     let span = parentDiv.getElementsByTagName('span');
-    setInterval(function(){
-    if(iterator==message.length){
-        return;
-    }       
+    setInterval(function(){ 
+        iterator = Math.floor(Math.random()*message.length);
     span[iterator].textContent = message.charAt(iterator);
-    iterator = iterator = Math.floor(Math.random()*message.length);
-    console.log(iterator)
-    }, 5);
+    if(span[iterator].textContent !== "0" || span[iterator].textContent !== "1"){
+        if(iterator>Math.floor(message.length/2)){
+        for(let i=iterator; i>=0; i--){
+            if(span[i].textContent == "0" || span[i].textContent == "1"){
+            span[i].textContent = message.charAt(i);
+            break;
+            }
+        }
+    }
+        else if (iterator<Math.floor(message.length/2)){
+            for(let i=iterator; i<message.length; i++){
+                if(span[i].textContent == "0" || span[i].textContent == "1"){
+                span[i].textContent = message.charAt(i);
+                break;
+                }
+            }
+    }
+}
+
+    
+    }, 20);
+
+   
 }
 
 let newTime = setTimeout(function(){changeSpans(message, iterator)}, 1000);
