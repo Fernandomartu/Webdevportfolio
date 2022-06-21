@@ -37,7 +37,7 @@ let rearrange = () => {
 textScrambler("test message");
 */
 let message1 = "test message";
-let message = "Web developer. Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
+let message = "Self taught developer with Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
 let parentDiv = document.getElementById("description-paragraph-wrap");
 let generateSpans = (string) => {
 
@@ -56,7 +56,7 @@ let textScrambler = (message) => {
 
  
     let span = parentDiv.getElementsByTagName('span');
-    let time = 0;
+    
 
    
 
@@ -68,11 +68,10 @@ let textScrambler = (message) => {
       for (let i=0; i<message.length; i++){
         if(message.charAt(i) == " "){span[i].textContent = " ";}
           else if(span[i].textContent == "0" || span[i].textContent == "1" || span[i].textContent == ""){
-        span[i].textContent = codeletters.charAt(Math.floor(Math.random()*2));
-        span[i].style.opacity = "1";    
+        span[i].textContent = codeletters.charAt(Math.floor(Math.random()*2));  
         }    
       }
-      time += 100;
+      
     }
     setInterval(scrambleSpans, 100);
 
@@ -87,13 +86,13 @@ let changeSpans = (message, iterator) => {
     setInterval(function(){ 
         iterator = Math.floor(Math.random()*message.length);
     span[iterator].textContent = message.charAt(iterator);
-    span[iterator].style.opacity = "1";
+    
     if(span[iterator].textContent !== "0" || span[iterator].textContent !== "1"){
         if(iterator>Math.floor(message.length/2)){
         for(let i=iterator; i>=0; i--){
             if(span[i].textContent == "0" || span[i].textContent == "1"){
             span[i].textContent = message.charAt(i);
-            span[i].style.opacity = "1";
+            
             break;
             }
         }
@@ -102,7 +101,7 @@ let changeSpans = (message, iterator) => {
             for(let i=iterator; i<message.length; i++){
                 if(span[i].textContent == "0" || span[i].textContent == "1"){
                 span[i].textContent = message.charAt(i);
-                span[i].style.opacity = "1";
+
                 break;
                 }
             }
@@ -110,12 +109,12 @@ let changeSpans = (message, iterator) => {
 }
 
     
-    }, 60);
+    }, 30);
 
    
 }
 
-let newTime = setTimeout(function(){changeSpans(message, iterator)}, 1000);
+let newTime = setTimeout(function(){changeSpans(message, iterator)}, 3000);
 
 /*let textScrambler = (message) => {
     let newPElement = document.createElement("p");

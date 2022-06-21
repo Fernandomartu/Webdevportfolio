@@ -13,7 +13,7 @@ for (let i=0; i<nameSpans.length; i++){
     }
 }
 
-setTimeout(changeColor, 500);
+changeColor();
 
 let loadNextAnim = () => {
     const script = document.createElement('script');
