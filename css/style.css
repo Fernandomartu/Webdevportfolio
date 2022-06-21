@@ -108,66 +108,35 @@
     background-color: green;
 }
 
-.projects-main-wrap {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;;
-    background-color: antiquewhite;
-    width: 500px;
-    height: 500px;
-}
-
-#projects-wrap {
-    position: relative;
-    display: none;
-    top: 10%;
-    left: 10%;
-    background-color: #0D0208;
-    width: 100px;
-    height: 50px;
-    text-align: center;
-}
-
- .projects-wrap span {
-     position: relative;
-     top: 35%;
-     color: #00FF41;
-     font-size: 30px;7
-}
-
-#resume-wrap {
-    position: absolute;
-    display: none;
-    top: 35%;
-    left: 35%;
-    background-color: #0D0208;
-    width: 100px;
-    height: 50px;
-    text-align: center;  
-}
-
-.resume-wrap span {
-    position: relative;
-    top: 35%;
-    color: #00FF41; 
-    font-size: 30px;
-}
-
-#ordernow-wrap {
-    position: absolute;
-    display: none;
-    top: 50%;
-    left: 50%;
-    background-color: #0D0208;
-    width: 200px;
-    height: 50px;
-    text-align: center;  
-}
-
 .ordernow-wrap span {
     position: relative;
     top: 35%;
     color: #00FF41; 
     font-size: 30px;
+}
+
+#navigation-main-wrap {
+    display: grid;
+    margin-top: 20%;
+    grid-template-columns: 1fr;
+    justify-content: center;
+   
+}
+
+#navigation-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-content: center;
+}
+
+.nav-option {
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+#underliner {
+    width: 300px;
+    height: 300px;
+    background-color: greenyellow;
 }
