@@ -124,15 +124,17 @@
 }
 
 #navigation-tabs {
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-content: center;
+    justify-items: center;
 }
 
 .nav-option {
-    background-color: blue;
+    width: fit-content;
     color: white;
     text-align: center;
+    cursor: default;
 }
 
 #underliner-container {
@@ -145,8 +147,6 @@
 #underliner {
     position: relative;
     background-color: greenyellow;
-    width: 90px;
     height: 1px;
-    left: 9%;
     transition: all 300ms ease-in;
 }
