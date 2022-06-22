@@ -18,7 +18,7 @@ let timer = setInterval(displayClickAnywhereText, 1000);
 */
 let loadNextAnim = () => {
     const script = document.createElement('script');
-    script.src = './scripts/linesanimations.js';
+    script.src = './scripts/test.js';
     document.head.prepend(script);
     }
 
