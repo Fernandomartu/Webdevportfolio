@@ -1,5 +1,6 @@
 let navOption = document.getElementsByClassName('nav-option');
 let underliner = document.getElementById("underliner");
+let mainBodyWrap = document.getElementById("main-body-wrap");
 let aboutMeTab = true;
 let projectsTab = false;
 let contactTab = false;
@@ -14,6 +15,7 @@ let generateUnderliner = () => {
 let moveUnderlineOne = () => {
         underliner.style.left = navOption[0].getBoundingClientRect().left - 10 + "px";
         underliner.style.width = navOption[0].getBoundingClientRect().width + 5 + "px";
+        mainBodyWrap.style.right = "0vw";
         aboutMeTab = true;
         servicesTab = false;
         contactTab = false;
@@ -24,6 +26,7 @@ let moveUnderlineOne = () => {
 let moveUnderlineTwo = () => {
     underliner.style.left = navOption[1].getBoundingClientRect().left - 10 + "px";
     underliner.style.width = navOption[1].getBoundingClientRect().width + 5 + "px";
+    mainBodyWrap.style.right = "100vw";
     projectsTab = true;
     contactTab = false;
     aboutMeTab = false;
@@ -35,6 +38,7 @@ let moveUnderlineTwo = () => {
 let moveUnderlineThree = () => {
     underliner.style.left = navOption[2].getBoundingClientRect().left - 10 + "px";
     underliner.style.width = navOption[2].getBoundingClientRect().width + 5 + "px";
+    mainBodyWrap.style.right = "200vw";
     servicesTab = true;
     contactTab = false;
     projectsTab = false;
@@ -46,6 +50,7 @@ let moveUnderlineThree = () => {
 let moveUnderlineFour = () => {
     underliner.style.left = navOption[3].getBoundingClientRect().left - 10 + "px";
     underliner.style.width = navOption[3].getBoundingClientRect().width + 5 + "px";
+    mainBodyWrap.style.right = "300vw";
     contactTab = true;
     servicesTab = false;
     projectsTab = false;
