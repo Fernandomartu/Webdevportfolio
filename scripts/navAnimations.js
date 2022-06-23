@@ -5,6 +5,12 @@ let projectsTab = false;
 let contactTab = false;
 let servicesTab = false;
 
+let generateUnderliner = () => {
+    underliner.style.left = navOption[0].getBoundingClientRect().left + 30 + "px";
+    setTimeout(function(){underliner.style.width = navOption[0].getBoundingClientRect().width + 5 + "px";
+    underliner.style.left = underliner.getBoundingClientRect().left - 47 + "px";}, 200)
+}
+
 let moveUnderlineOne = () => {
         underliner.style.left = navOption[0].getBoundingClientRect().left - 10 + "px";
         underliner.style.width = navOption[0].getBoundingClientRect().width + 5 + "px";
@@ -73,5 +79,7 @@ let adjustUnderlineToWindow = () => {
 
 window.onload = adjustUnderlineToWindow;
 window.onresize = adjustUnderlineToWindow;
+
+generateUnderliner();
 
 

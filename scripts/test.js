@@ -36,30 +36,23 @@ let rearrange = () => {
 
 textScrambler("test message");
 */
-let message1 = "test message";
 let message = "Self taught developer with Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
-let parentDiv = document.getElementById("description-paragraph-wrap");
-let generateSpans = (string) => {
+let descParagraphWrap = document.getElementById("description-paragraph-wrap");
+let generateSpans = (string, div) => {
 
     for(let i=0; i<string.length+1; i++){
     const newSpan = document.createElement("span");
-    parentDiv.appendChild(newSpan);
+    div.appendChild(newSpan);
     newSpan.setAttribute("class", "span")
         }
     }
-    generateSpans(message);
+    generateSpans(message, descParagraphWrap);
 
     
 let textScrambler = (message) => {
-    console.log(message.length/2);
-    let parentDiv = document.getElementById("description-paragraph-wrap");
-
- 
-    let span = parentDiv.getElementsByTagName('span');
     
-
-   
-
+    let span = descParagraphWrap.getElementsByTagName('span');
+    
     let scrambleSpans = () => {
         
         let codeletters = "01";
@@ -92,7 +85,6 @@ let changeSpans = (message, iterator) => {
         for(let i=iterator; i>=0; i--){
             if(span[i].textContent == "0" || span[i].textContent == "1"){
             span[i].textContent = message.charAt(i);
-            
             break;
             }
         }
@@ -101,7 +93,6 @@ let changeSpans = (message, iterator) => {
             for(let i=iterator; i<message.length; i++){
                 if(span[i].textContent == "0" || span[i].textContent == "1"){
                 span[i].textContent = message.charAt(i);
-
                 break;
                 }
             }

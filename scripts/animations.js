@@ -18,7 +18,7 @@ let timer = setInterval(displayClickAnywhereText, 1000);
 */
 let loadNextAnim = () => {
     const script = document.createElement('script');
-    script.src = './scripts/test.js';
+    script.src = './scripts/textScrambler.js';
     document.head.prepend(script);
     }
 
