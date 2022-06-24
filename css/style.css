@@ -94,14 +94,26 @@ overflow: scroll;
 .project {
     display: grid;
     background-color: green;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 65vh;
     border-width: 5px;
     border-style: solid;
     border-color: blue;
     text-align: center;
     width: 80vw;
-    height: 80vh;
-    
+    height: 65vh;
 }
+
+#project-column-left {
+    background-color: antiquewhite;
+}
+
+#project-column-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: orange;
+}
+
 
 .span {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
