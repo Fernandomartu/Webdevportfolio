@@ -5,7 +5,7 @@ function Project(title, image, description, technologies, projectID, imgID) {
     this.technologies = technologies;
     this.appendData = function(){
         let project = document.getElementById(projectID);
-        let img = document.getElementById(imgID)
+        let img = document.getElementById(imgID);
         img.src = this.image;
         console.log(img);
     }
