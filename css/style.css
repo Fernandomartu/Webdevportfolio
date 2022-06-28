@@ -3,7 +3,7 @@
 * {
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #030303;
+    background-color: #0a192f;
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -25,7 +25,7 @@
 .click-anywhere-wrap {
     display: grid;
     font-size: 20px;
-    color: #00FF41;
+    color: #00ff40e7;
     justify-content: center;
     margin-top: 15%;
 }
@@ -61,7 +61,7 @@
     color: #00ff40e7;
     white-space: pre-wrap;
 }
-
+/*#00ff40e7*/
 #description-paragraph-wrap {
     font-size: 20px;
     color: #00ff40e7;
@@ -76,7 +76,6 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100%;
-    justify-items: center;
    }
 
 #projects-wrap {
@@ -84,36 +83,93 @@
 position: relative;
  display: grid;
  width: 80vw;
- background-color: gray;
  grid-template-columns: 1fr;
  grid-template-rows: 100%;
- justify-items: center;
-overflow: scroll;
+overflow-y: scroll;
+left: 5%;
+
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
 
 .project {
     display: grid;
     background-color: green;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 65vh;
-    border-width: 5px;
-    border-style: solid;
-    border-color: blue;
     text-align: center;
-    width: 80vw;
+    width: 75vw;
     height: 65vh;
 }
 
 #project-column-left {
-    background-color: antiquewhite;
+    display: grid;
+    overflow: visible;
+    align-content: center;
+    justify-content: center;
 }
 
 #project-column-right {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: orange;
+    grid-row-gap: 20px;
+    align-content: center;
 }
 
+.project-image {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    left: 40%;
+}
+
+.project-title { 
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    justify-self: end;
+}
+
+.project-description {
+    text-align: right;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #112240;
+    z-index: 2;
+}
+
+.project-technologies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    color: white;
+    justify-self: end;
+    width: max-content;
+    height: 50px;
+}
+
+.technology {
+    width: fit-content;
+    height: fit-content;
+}
 
 .span {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -177,7 +233,7 @@ overflow: scroll;
 
 #underliner {
     position: relative;
-    background-color: greenyellow;
+    background-color: #00ff40e7;
     height: 1px;
     width: 0px;
     transition: all 600ms ease-in;

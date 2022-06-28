@@ -68,7 +68,7 @@ let pulsateUnderscoreFinal = (letters, letterIndex) => {
             console.log(count);
             /*keyboardsound.play();*/
             for(let i=0; i<nameSpans.length; i++){
-            nameSpans[i].style.color = "#00FF41";
+            nameSpans[i].style.color = "#00ff40e7";
             }
             clearInterval(timer);
             firstAnimComplete = true;
