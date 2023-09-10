@@ -33,7 +33,10 @@ let textScrambler = (message, parentDiv, descrambleTime, descrambleTimeout) => {
 
   let scramble = () => {
     let span = parentDiv.getElementsByTagName("span");
-
+    let spanElements = parentDiv.getElementsByTagName("span");
+    for (let i = 0; i < spanElements.length; i++) {
+      spanElements[i].style.backgroundColor = "transparent";
+    }
     let scrambleSpans = () => {
       let codeletters = "01";
 

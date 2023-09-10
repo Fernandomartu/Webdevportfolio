@@ -6,7 +6,7 @@
   font-family: "Roboto Mono", monospace;
 }
 
-.header-grid-main-wrap {
+/* .header-grid-main-wrap {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 60%;
@@ -25,13 +25,58 @@
 .hdrimg {
   width: 25px;
   height: 25px;
-}
+} */
 
 .body {
   overflow-y: scroll;
   overflow-x: hidden;
   margin: 0; /* Remove body margins */
   width: 100vw;
+}
+
+#navigation-main-wrap {
+  display: grid;
+  position: sticky;
+  top: 0;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  /* background-color: blue; */
+  background-color: #111f35;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 5;
+  border-top: 1px solid white;
+}
+
+#navigation-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  background-color: transparent;
+}
+
+.nav-option {
+  width: fit-content;
+  color: white;
+  text-align: center;
+  cursor: default;
+  background-color: transparent;
+}
+
+#underliner-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5px;
+  align-content: center;
+  background-color: transparent;
+}
+
+#underliner {
+  position: relative;
+  background-color: white;
+  height: 1px;
+  width: 0px;
+  transition: all 600ms ease-in;
 }
 /*#click-anywhere-text {
     font-family: 'Roboto Mono', monospace;
@@ -162,7 +207,7 @@
 
 .image-wrapper {
   position: relative;
-  background-color: RGB(93, 238, 206);
+  background-color: #64ffda;
   height: 300px;
   top: 10%;
   width: fit-content;
@@ -173,11 +218,11 @@
 
 .project-image {
   position: relative;
-  opacity: 0.7; /* Change to 0.7 to represent 70% */
+  opacity: 0.8; /* Change to 0.7 to represent 70% */
   max-width: 500px;
   height: auto;
   inset: 0px;
-  transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 500ms linear 0s;
 }
 
 .image-wrapper:hover .project-image {
@@ -368,49 +413,4 @@
   to {
     opacity: 1;
   }
-}
-
-#navigation-main-wrap {
-  display: grid;
-  position: sticky;
-  bottom: 0;
-  margin-top: 5vh;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  /* background-color: blue; */
-  background-color: #111f35;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  z-index: 5;
-  border-top: 1px solid white;
-}
-
-#navigation-tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  background-color: transparent;
-}
-
-.nav-option {
-  width: fit-content;
-  color: white;
-  text-align: center;
-  cursor: default;
-}
-
-#underliner-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 5px;
-  align-content: center;
-  background-color: #111f35;
-}
-
-#underliner {
-  position: relative;
-  background-color: white;
-  height: 1px;
-  width: 0px;
-  transition: all 600ms ease-in;
 }
