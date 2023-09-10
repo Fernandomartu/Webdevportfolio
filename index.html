@@ -2,55 +2,116 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!-<![endif]-->
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="./scripts/animations.js" type="module"></script>
-        <script src="./scripts/projects.js" type="module"></script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <div class="header-grid-main-wrap">
-            <div class="header-left-column">test</div>
-            <div class="header-right-column">test</div>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./scripts/animations.js" type="module"></script>
+    <script src="./scripts/projects.js" type="module"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="body">
+    <div class="header-grid-main-wrap">
+      <div class="header-left-column">test</div>
+      <div class="header-right-column">
+        <img class="hdrimg" src="./images/gitwhite.png" />
+      </div>
+    </div>
+    <div class="main-body-wrap" id="main-body-wrap">
+      <div class="landing-left-column" id="landing-left-column">
+        <div id="name-desc-wrap">
+          <div class="name-wrap" id="name-wrap"></div>
+          <div
+            class="description-paragraph-wrap"
+            id="description-paragraph-wrap"
+          ></div>
         </div>
-        <div class="main-body-wrap" id="main-body-wrap">
-            <div class="name-desc-wrap" id="name-desc-wrap">
-                <div class="name-wrap" id="name-wrap"></div>
-                <div class="description-paragraph-wrap" id="description-paragraph-wrap"></div>
+      </div>
+      <div class="projects-main-wrap" id="projects-main-wrap">
+        <h2 id="projects-header">Projects</h2>
+        <div class="projects-wrap" id="projects-wrap">
+          <div class="project" id="project-one">
+            <div id="project-column-left" class="project-column-left">
+              <div class="image-wrapper">
+                <img
+                  src="./images/Socialmediaapp.png"
+                  id="project-one-image"
+                  class="project-image"
+                />
+              </div>
             </div>
-            <div class="projects-main-wrap" id="projects-main-wrap">
-                <div class="projects-wrap" id="projects-wrap">
-                    <div class="project" id="project-one">
-                        <div id="project-column-left" class="project-column-left">
-                            <img id="project-one-image" class="project-image">
-                        </div>
-                        <div id="project-column-right">
-                            <h2 id="project-one-title" class="project-title"></h2>
-                            <p id="project-one-description" class="project-description" ></p>
-                            <div id="project-one-technologies" class="project-technologies"><h4 class="technology">test</h4><h4  class="technology">test</h4><h4  class="technology">test</h4><h4  class="technology">test</h4></div>
-                        </div>
-                    </div>
-                    <div class="project">Project2</div>
-                </div>
+            <div id="project-column-right">
+              <div class="project-title-container">
+                <h2 id="project-one-title-top" class="project-title">
+                  MERN Stack
+                </h2>
+                <h2 id="project-one-title" class="project-title">
+                  Social Media App
+                </h2>
+              </div>
+              <p id="project-one-description" class="project-description">
+                A barebones social media app. Users have the ability to add
+                friends and create posts. Features functional authentication and
+                a light and dark theme.
+              </p>
+              <div id="project-one-technologies" class="project-technologies">
+                <h4 class="technology">React</h4>
+                <h4 class="technology">Redux</h4>
+                <h4 class="technology">Express</h4>
+                <h4 class="technology">MongoDB</h4>
+              </div>
             </div>
+          </div>
+          <div class="project" id="project-one">
+            <div id="project-column-left" class="project-column-left">
+              <div class="image-wrapper">
+                <img
+                  src="./images/Socialmediaapp.png"
+                  id="project-one-image"
+                  class="project-image"
+                />
+              </div>
+            </div>
+            <div id="project-column-right">
+              <div class="project-title-container">
+                <h2 id="project-one-title-top" class="project-title">
+                  MERN Stack
+                </h2>
+                <h2 id="project-one-title" class="project-title">
+                  Social Media App
+                </h2>
+              </div>
+              <p id="project-one-description" class="project-description">
+                A barebones social media app. Users have the ability to add
+                friends and create posts. Features functional authentication and
+                a light and dark theme.
+              </p>
+              <div id="project-one-technologies" class="project-technologies">
+                <h4 class="technology">React</h4>
+                <h4 class="technology">Redux</h4>
+                <h4 class="technology">Express</h4>
+                <h4 class="technology">MongoDB</h4>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="navigation-main-wrap" id="navigation-main-wrap">
-            <div class="navigation-tabs" id="navigation-tabs">
-                <div class="nav-option" id="About"></div>
-                <div class="nav-option" id="Projects"></div>
-                <div class="nav-option" id="Services"></div>
-                <div class="nav-option" id="Contact Me"></div>
-            </div>
-            <div id="underliner-container">
-                <div class="underliner-div" id="underliner"></div>
-            </div>
-        </div>
-    </body>
+      </div>
+    </div>
+    <div class="navigation-main-wrap" id="navigation-main-wrap">
+      <div class="navigation-tabs" id="navigation-tabs">
+        <div class="nav-option" id="About"></div>
+        <div class="nav-option" id="Projects"></div>
+        <div class="nav-option" id="Services"></div>
+        <div class="nav-option" id="Contact Me"></div>
+      </div>
+      <div id="underliner-container">
+        <div class="underliner-div" id="underliner"></div>
+      </div>
+    </div>
+  </body>
 </html>
