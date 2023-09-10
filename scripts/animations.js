@@ -120,7 +120,7 @@ let textAnimMain = (string, wrapDivName, timeout) => {
         pulsateUnderscoreFinal(letters, i);
       }
     };
-    let timer = setInterval(changeText, 400);
+    let timer = setInterval(changeText, 100);
   };
 
   setTimeout(function () {
