@@ -202,7 +202,7 @@
 
 .project-description {
   position: relative;
-  text-align: right;
+  text-align: center;
   color: RGB(204, 214, 246);
   width: auto;
   box-shadow: 0 10px 30px -15px var(--navy-shadow);
@@ -227,6 +227,100 @@
 .technology {
   width: fit-content;
   height: fit-content;
+}
+
+/*PROJECT INVERSE STYLING */
+
+.inverse-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  background-color: transparent;
+  height: 65vh;
+}
+
+#inverse-project-column-left {
+  display: grid;
+  overflow: visible;
+  align-content: start;
+  justify-content: start;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+#inverse-project-column-right {
+  position: relative;
+  display: grid;
+  margin-top: 30px;
+  align-content: start;
+  grid-template-columns: 1fr;
+  grid-row-gap: 5px;
+  background-color: transparent;
+  right: 20px;
+}
+
+.inverse-image-wrapper {
+  position: relative;
+  background-color: RGB(93, 238, 206);
+  height: 300px;
+  top: 10%;
+  width: fit-content;
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.inverse-project-image {
+  position: relative;
+  opacity: 0.7; /* Change to 0.7 to represent 70% */
+  max-width: 500px;
+  height: auto;
+  inset: 0px;
+  transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.inverse-image-wrapper:hover .inverse-project-image {
+  opacity: 1; /* Change to 1 to represent 100% on hover */
+  cursor: pointer;
+}
+
+.inverse-project-title-container {
+  display: grid;
+  grid-template-rows: 0px;
+  grid-row-gap: 50px;
+  background-color: transparent;
+}
+
+.inverse-project-title {
+  color: RGB(204, 214, 246);
+  width: fit-content;
+  height: fit-content;
+  font-weight: bold;
+  justify-self: start;
+}
+
+.inverse-project-description {
+  position: relative;
+  text-align: center;
+  color: RGB(204, 214, 246);
+  width: auto;
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  padding: 20px;
+  font-size: 14px;
+  background-color: #112240;
+  z-index: 2;
+  max-width: 100%;
+  font-weight: bold;
+}
+
+.inverse-project-technologies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  color: white;
+  justify-self: start;
+  width: max-content;
+  height: 50px;
 }
 
 .span {
