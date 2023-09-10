@@ -45,7 +45,7 @@
   padding-top: 20px;
   padding-bottom: 20px;
   z-index: 5;
-  border-top: 1px solid white;
+  height: 70px;
 }
 
 #navigation-tabs {
@@ -137,6 +137,8 @@
   display: grid;
   grid-template-columns: 1fr;
   background-color: transparent;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 #projects-wrap {
@@ -171,9 +173,23 @@
   z-index: 3;
 }
 
+#projects-header-wrap {
+  display: flex;
+}
+
 #projects-header {
   color: RGB(204, 214, 246);
   justify-self: start;
+  align-self: center;
+}
+
+#divider {
+  width: 30%;
+  height: 0.5px;
+  border-top: 2px solid #111f35;
+  align-self: center;
+  margin-top: 5px;
+  margin-left: 50px;
 }
 
 .project {
@@ -207,22 +223,27 @@
 
 .image-wrapper {
   position: relative;
-  background-color: #64ffda;
+  /* background-color: RGB(29, 72, 83); */
   height: 300px;
   top: 10%;
   width: fit-content;
-  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+
   border-radius: 5px;
   overflow: hidden;
+  border: 0px;
 }
 
 .project-image {
   position: relative;
-  opacity: 0.8; /* Change to 0.7 to represent 70% */
+  opacity: 0.4; /* Change to 0.7 to represent 70% */
   max-width: 500px;
   height: auto;
   inset: 0px;
   transition: opacity 500ms linear 0s;
+}
+
+.image-wrapper:hover {
+  border: 1px solid RGB(29, 72, 83);
 }
 
 .image-wrapper:hover .project-image {
@@ -306,22 +327,27 @@
 
 .inverse-image-wrapper {
   position: relative;
-  background-color: RGB(93, 238, 206);
+  /* background-color: RGB(29, 72, 83); */
   height: 300px;
   top: 10%;
   width: fit-content;
-  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+
   border-radius: 5px;
   overflow: hidden;
+  border: 0px;
 }
 
 .inverse-project-image {
   position: relative;
-  opacity: 0.7; /* Change to 0.7 to represent 70% */
+  opacity: 0.4; /* Change to 0.7 to represent 70% */
   max-width: 500px;
   height: auto;
   inset: 0px;
-  transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 500ms linear 0s;
+}
+
+.inverse-image-wrapper:hover {
+  border: 1px solid RGB(29, 72, 83);
 }
 
 .inverse-image-wrapper:hover .inverse-project-image {

@@ -51,7 +51,7 @@ let pulsateUnderscoreInitial = (letters, letterIndex) => {
 
     count++;
   };
-  let timer = setInterval(editText, 100);
+  let timer = setInterval(editText, 800);
 };
 
 let pulsateUnderscoreFinal = (letters, letterIndex) => {
@@ -77,7 +77,7 @@ let pulsateUnderscoreFinal = (letters, letterIndex) => {
       letters[letterIndex].textContent = "_";
     }
   };
-  let timer = setInterval(editText, 100);
+  let timer = setInterval(editText, 800);
 };
 
 let generateSpans = (string, divid) => {
@@ -120,7 +120,7 @@ let textAnimMain = (string, wrapDivName, timeout) => {
         pulsateUnderscoreFinal(letters, i);
       }
     };
-    let timer = setInterval(changeText, 100);
+    let timer = setInterval(changeText, 400);
   };
 
   setTimeout(function () {
