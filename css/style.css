@@ -88,11 +88,9 @@
 #main-body-wrap {
   position: relative;
   display: grid;
-
-  grid-template-columns: 40vw 60vw 100vw 100vw;
-
-  transition: right 700ms ease-in;
+  grid-template-columns: 100vw 100vw 100vw 100vw;
   right: 0vw;
+  transition: right 700ms ease-in;
 }
 
 #projects-div-test {
@@ -103,6 +101,16 @@
 #services-div-test {
   background-color: orange;
   z-index: 5;
+}
+
+#contactme-div-test {
+  background-color: purple;
+  z-index: 5;
+}
+
+#landing-main-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 #landing-left-column {
@@ -258,10 +266,10 @@
 .image-wrapper {
   position: relative;
   /* background-color: RGB(29, 72, 83); */
-  height: 300px;
+
   top: 10%;
   width: fit-content;
-
+  max-height: 300px;
   border-radius: 5px;
   overflow: hidden;
   border: 0px;
@@ -270,7 +278,8 @@
 .project-image {
   position: relative;
   opacity: 0.6; /* Change to 0.7 to represent 70% */
-  max-width: 500px;
+  max-width: 100%;
+  min-width: 300px;
   height: auto;
   inset: 0px;
   transition: opacity 500ms linear 0s;
@@ -365,10 +374,10 @@
 .inverse-image-wrapper {
   position: relative;
   /* background-color: RGB(29, 72, 83); */
-  width: 30%;
+
   top: 10%;
   width: fit-content;
-
+  max-height: 300px;
   border-radius: 5px;
   overflow: hidden;
   border: 0px;
@@ -377,7 +386,8 @@
 .inverse-project-image {
   position: relative;
   opacity: 0.6; /* Change to 0.7 to represent 70% */
-  max-width: 500px;
+  max-width: 100%;
+  min-width: 300px;
   height: auto;
   inset: 0px;
   transition: opacity 500ms linear 0s;

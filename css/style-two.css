@@ -72,21 +72,6 @@
   transition: right 700ms ease-in;
 }
 
-#projects-div-test {
-  background-color: blue;
-  z-index: 5;
-}
-
-#services-div-test {
-  background-color: orange;
-  z-index: 5;
-}
-
-#contactme-div-test {
-  background-color: purple;
-  z-index: 5;
-}
-
 #landing-main-wrap {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -103,8 +88,8 @@
 #name-desc-wrap {
   display: grid;
   align-self: top;
-  justify-self: center;
-  margin-left: 100px;
+  justify-self: start;
+  margin-left: 50px;
   margin-top: 10px;
   grid-template-rows: 1fr 1fr;
   width: 80%;
@@ -132,6 +117,7 @@
 
 #projects-main-wrap {
   margin-top: 100px;
+  margin-right: 50px;
   display: grid;
   grid-template-columns: 1fr;
   background-color: transparent;
@@ -140,7 +126,7 @@
 #projects-wrap {
   position: relative;
   display: grid;
-  width: 90%;
+
   justify-self: start;
   align-content: start;
   grid-template-columns: 1fr;
@@ -468,12 +454,49 @@
   }
 }
 
-@media screen and (min-width: 750px) and (max-width: 1300px) {
-  #main-body-wrap {
-    position: relative;
+.placeholder {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  z-index: 5;
+}
+
+.page-under-dev-header {
+  align-self: center;
+  color: RGB(93, 238, 206);
+}
+
+@media screen and (min-width: 800px) and (max-width: 1300px) {
+  #landing-main-wrap {
     display: grid;
-    grid-template-columns: 100vw 100vw 100vw 100vw;
+    grid-template-columns: 100vw;
     right: 0vw;
     transition: right 700ms ease-in;
+  }
+
+  #landing-left-column {
+    display: grid;
+    margin-top: 100px;
+    grid-template-rows: 1fr;
+    height: 10vh;
+    background-color: transparent;
+  }
+
+  #name-wrap {
+    justify-self: start;
+  }
+
+  #description-paragraph-wrap {
+    color: RGB(93, 238, 206);
+    max-width: 600px;
+  }
+
+  #projects-main-wrap {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  #projects-wrap {
+    justify-self: center;
   }
 }
