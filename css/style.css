@@ -365,7 +365,7 @@
 .inverse-image-wrapper {
   position: relative;
   /* background-color: RGB(29, 72, 83); */
-  height: 300px;
+  width: 30%;
   top: 10%;
   width: fit-content;
 
