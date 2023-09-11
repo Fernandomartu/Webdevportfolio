@@ -89,7 +89,6 @@ let adjustUnderlineToWindow = () => {
   }
 };
 
-window.onload = adjustUnderlineToWindow;
 window.onresize = adjustUnderlineToWindow;
 
 generateUnderliner();
