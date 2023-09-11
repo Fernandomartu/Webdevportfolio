@@ -46,7 +46,7 @@
   padding-bottom: 20px;
   z-index: 5;
   height: 70px;
-  width: 100%;
+  width: 100vw;
 }
 
 #navigation-tabs {
@@ -91,21 +91,6 @@
   grid-template-columns: 100vw 100vw 100vw 100vw;
   right: 0vw;
   transition: right 700ms ease-in;
-}
-
-#projects-div-test {
-  background-color: blue;
-  z-index: 5;
-}
-
-#services-div-test {
-  background-color: orange;
-  z-index: 5;
-}
-
-#contactme-div-test {
-  background-color: purple;
-  z-index: 5;
 }
 
 #landing-main-wrap {
@@ -485,5 +470,117 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  z-index: 5;
+}
+
+.page-under-dev-header {
+  align-self: center;
+  color: RGB(93, 238, 206);
+}
+
+@media screen and (min-width: 800px) and (max-width: 1300px) {
+  #landing-main-wrap {
+    display: grid;
+    grid-template-columns: 100vw;
+    right: 0vw;
+    transition: right 700ms ease-in;
+  }
+
+  #landing-left-column {
+    display: grid;
+    margin-top: 100px;
+    grid-template-rows: 1fr;
+    height: 10vh;
+    background-color: transparent;
+  }
+
+  #name-wrap {
+    justify-self: start;
+  }
+
+  #description-paragraph-wrap {
+    color: RGB(93, 238, 206);
+    max-width: 600px;
+  }
+
+  #projects-main-wrap {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  #projects-wrap {
+    justify-self: center;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  #landing-main-wrap {
+    display: grid;
+    grid-template-columns: 100vw;
+    right: 0vw;
+    transition: right 700ms ease-in;
+  }
+
+  #landing-left-column {
+    display: grid;
+    margin-top: 100px;
+    grid-template-rows: 1fr;
+    height: 10vh;
+    background-color: transparent;
+  }
+
+  #name-wrap {
+    justify-self: start;
+  }
+
+  #description-paragraph-wrap {
+    color: RGB(93, 238, 206);
+    max-width: 600px;
+  }
+
+  #projects-main-wrap {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  #projects-wrap {
+    justify-self: center;
+  }
+
+  .project {
+    display: block;
+    background-color: transparent;
+    text-align: center;
+    background-color: transparent;
+    height: 65vh;
+  }
+
+  #project-column-left {
+    display: block;
+  }
+
+  #project-column-right {
+    position: absolute;
+    top: 0;
+    display: grid;
+  }
+
+  .image-wrapper {
+    position: relative;
+    background-color: RGB(29, 72, 83);
+    width: 100%;
+    top: 10%;
+
+    max-height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 0px;
   }
 }
