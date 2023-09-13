@@ -91,11 +91,13 @@
   grid-template-columns: 100vw 100vw 100vw 100vw;
   right: 0vw;
   transition: right 700ms ease-in;
+  width: 100vw;
 }
 
 #landing-main-wrap {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+  width: 100vw;
 }
 
 #landing-left-column {
@@ -110,9 +112,9 @@
   display: grid;
   align-self: top;
   justify-self: center;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: 10px;
-  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 10px;
   width: 80%;
   height: fit-content;
   margin-right: 50px;
@@ -137,6 +139,7 @@
 
 #projects-main-wrap {
   margin-top: 100px;
+  margin-right: 50px;
   display: grid;
   grid-template-columns: 1fr;
   background-color: transparent;
@@ -145,14 +148,14 @@
 #projects-wrap {
   position: relative;
   display: grid;
-  width: 90%;
+
   justify-self: start;
   align-content: start;
   grid-template-columns: 1fr;
-  grid-template-rows: 35%;
+  grid-row-gap: 100px;
   /* overflow-y: scroll; */
   background-color: transparent;
-  padding-right: 20px;
+  margin-bottom: 100px;
 }
 
 /* width */
@@ -197,11 +200,10 @@
 
 .project {
   display: grid;
-  background-color: transparent;
   grid-template-columns: 1fr 1fr;
   text-align: center;
   background-color: transparent;
-  height: 65vh;
+  height: fit-content;
 }
 
 @keyframes fade-in-left {
@@ -501,6 +503,10 @@
     background-color: transparent;
   }
 
+  #name-desc-wrap {
+    justify-self: start;
+  }
+
   #name-wrap {
     justify-self: start;
   }
@@ -520,17 +526,17 @@
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 800px) {
+@media screen and (min-width: 450px) and (max-width: 800px) {
   #landing-main-wrap {
     display: grid;
     grid-template-columns: 100vw;
-    right: 0vw;
+    right: 0;
     transition: right 700ms ease-in;
   }
 
   #landing-left-column {
     display: grid;
-    margin-top: 100px;
+    margin-top: 50px;
     grid-template-rows: 1fr;
     height: 10vh;
     background-color: transparent;
@@ -538,6 +544,7 @@
 
   #name-wrap {
     justify-self: start;
+    font-size: 35px;
   }
 
   #description-paragraph-wrap {
@@ -552,35 +559,306 @@
 
   #projects-wrap {
     justify-self: center;
+
+    grid-row-gap: 30px;
   }
 
   .project {
     display: block;
-    background-color: transparent;
     text-align: center;
-    background-color: transparent;
-    height: 65vh;
-  }
 
-  #project-column-left {
-    display: block;
+    height: fit-content;
   }
 
   #project-column-right {
     position: absolute;
     top: 0;
     display: grid;
+    right: 0;
+  }
+
+  #project-column-left {
+    position: relative;
+    top: 0;
+    display: block;
+  }
+
+  .project-title-container {
+    justify-self: start;
+  }
+
+  .project-title {
+    justify-self: start;
+    color: white;
   }
 
   .image-wrapper {
     position: relative;
-    background-color: RGB(29, 72, 83);
+    background-color: RGB(12, 32, 52);
     width: 100%;
-    top: 10%;
+    height: 100%;
+    opacity: 0.3;
+  }
 
-    max-height: 300px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 0px;
+  .project-image {
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .project-description {
+    background-color: transparent;
+    text-align: left;
+    padding: 0px;
+    color: white;
+    margin-right: 20px;
+  }
+
+  .project-technologies {
+    background-color: transparent;
+    justify-self: start;
+  }
+
+  .technology {
+    background-color: transparent;
+    color: white;
+  }
+
+  #inverse-project-column-left {
+    position: absolute;
+    display: block;
+  }
+
+  #inverse-project-column-right {
+    position: relative;
+    display: block;
+    top: 0;
+    right: 0;
+  }
+
+  .project-title-container {
+    justify-self: start;
+  }
+
+  .inverse-project-title {
+    justify-self: start;
+    color: white;
+  }
+
+  .inverse-image-wrapper {
+    position: relative;
+    background-color: RGB(12, 32, 52);
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+
+  .inverse-project-image {
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .inverse-project-description {
+    background-color: transparent;
+    text-align: left;
+    padding: 0px;
+    color: white;
+    max-width: 100%;
+    margin-right: 20px;
+  }
+
+  .inverse-project-technologies {
+    background-color: transparent;
+    justify-self: start;
+  }
+
+  .page-under-dev-header {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  #navigation-main-wrap {
+    opacity: 0;
+  }
+
+  #landing-main-wrap {
+    display: grid;
+    grid-template-columns: 100vw;
+    right: 0;
+    transition: right 700ms ease-in;
+    min-width: 0;
+  }
+
+  #landing-left-column {
+    display: grid;
+    margin-top: 0px;
+    grid-template-rows: 1fr;
+    height: fit-content;
+    background-color: transparent;
+    min-width: 0px;
+  }
+
+  #name-wrap {
+    font-size: 22px;
+  }
+
+  #description-paragraph-wrap {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  #projects-main-wrap {
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+  #projects-wrap {
+    grid-row-gap: 30px;
+  }
+
+  .project {
+    display: block;
+
+    width: 90%;
+    height: fit-content;
+    min-width: 0;
+    background-color: transparent;
+    justify-self: center;
+  }
+
+  #project-column-right {
+    position: absolute;
+    display: block;
+    min-width: 250px;
+    top: 0;
+    right: 0;
+  }
+
+  #project-column-left {
+    position: relative;
+    top: 0;
+    display: block;
+  }
+
+  .project-title-container {
+    justify-self: start;
+  }
+
+  .project-title {
+    justify-self: start;
+    color: white;
+  }
+
+  .image-wrapper {
+    position: relative;
+    background-color: RGB(12, 32, 52);
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+
+  .project-image {
+    height: 100%;
+    min-width: 0px;
+    min-height: 300px;
+    left: 0;
+  }
+
+  .project-title-container {
+    justify-self: center;
+  }
+
+  .project-title {
+    color: white;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+    justify-self: center;
+    background-color: transparent;
+  }
+
+  .project-description {
+    background-color: transparent;
+    text-align: center;
+    padding: 0px;
+    color: white;
+    margin-right: 0px;
+    height: auto;
+  }
+
+  .project-technologies {
+    display: grid;
+    background-color: transparent;
+    justify-self: center;
+    height: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .technology {
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+  }
+
+  #inverse-project-column-left {
+    position: absolute;
+    display: block;
+    min-width: 250px;
+  }
+
+  #inverse-project-column-right {
+    position: relative;
+    display: block;
+    top: 0;
+    right: 0;
+  }
+
+  .inverse-project-title {
+    color: white;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+    justify-self: center;
+    background-color: transparent;
+  }
+
+  .inverse-image-wrapper {
+    position: relative;
+    background-color: RGB(12, 32, 52);
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+
+  .inverse-project-image {
+    height: 100%;
+    min-width: 0px;
+    min-height: 300px;
+    right: 0;
+  }
+
+  .inverse-project-description {
+    background-color: transparent;
+    text-align: center;
+    padding: 0px;
+    color: white;
+    margin-right: 20px;
+    height: auto;
+  }
+
+  .inverse-project-technologies {
+    background-color: transparent;
+    justify-self: center;
+    height: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .page-under-dev-header {
+    font-size: 12px;
   }
 }

@@ -23,11 +23,11 @@ let moveUnderlineOne = () => {
   underliner.style.width =
     navOption[0].getBoundingClientRect().width + 5 + "px";
   mainBodyWrap.style.right = "0vw";
+  console.log("running this");
   aboutMeTab = true;
   servicesTab = false;
   contactTab = false;
   projectsTab = false;
-  console.log(aboutMeTab, projectsTab, servicesTab, contactTab);
   return aboutMeTab, projectsTab, servicesTab, contactTab;
 };
 let moveUnderlineTwo = () => {
@@ -75,7 +75,6 @@ navOption[2].addEventListener("click", moveUnderlineThree, false);
 navOption[3].addEventListener("click", moveUnderlineFour, false);
 
 let test = document.getElementById("Contact Me");
-console.log(test.getBoundingClientRect());
 
 let adjustUnderlineToWindow = () => {
   if (aboutMeTab == true) {
