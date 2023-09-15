@@ -9,8 +9,10 @@ let projectsTab = false;
 let contactTab = false;
 let servicesTab = false;
 
+underlineOffset = 3;
+
 let generateUnderliner = () => {
-  underliner.style.left = navOption[0].getBoundingClientRect().left + 35 + "px";
+  underliner.style.left = navOption[0].getBoundingClientRect().left + 37 + "px";
   setTimeout(function () {
     underliner.style.width =
       navOption[0].getBoundingClientRect().width + 5 + "px";
@@ -19,7 +21,8 @@ let generateUnderliner = () => {
 };
 
 let moveUnderlineOne = () => {
-  underliner.style.left = navOption[0].getBoundingClientRect().left - 3 + "px";
+  underliner.style.left =
+    navOption[0].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
     navOption[0].getBoundingClientRect().width + 5 + "px";
   mainBodyWrap.style.right = "0vw";
@@ -31,7 +34,8 @@ let moveUnderlineOne = () => {
   return aboutMeTab, projectsTab, servicesTab, contactTab;
 };
 let moveUnderlineTwo = () => {
-  underliner.style.left = navOption[1].getBoundingClientRect().left - 3 + "px";
+  underliner.style.left =
+    navOption[1].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
     navOption[1].getBoundingClientRect().width + 5 + "px";
   mainBodyWrap.style.right = "100vw";
@@ -44,7 +48,8 @@ let moveUnderlineTwo = () => {
 };
 
 let moveUnderlineThree = () => {
-  underliner.style.left = navOption[2].getBoundingClientRect().left - 3 + "px";
+  underliner.style.left =
+    navOption[2].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
     navOption[2].getBoundingClientRect().width + 5 + "px";
   mainBodyWrap.style.right = "200vw";
@@ -57,7 +62,8 @@ let moveUnderlineThree = () => {
 };
 
 let moveUnderlineFour = () => {
-  underliner.style.left = navOption[3].getBoundingClientRect().left - 3 + "px";
+  underliner.style.left =
+    navOption[3].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
     navOption[3].getBoundingClientRect().width + 5 + "px";
   mainBodyWrap.style.right = "300vw";

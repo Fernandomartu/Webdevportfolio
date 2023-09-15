@@ -4,6 +4,7 @@
   box-sizing: border-box;
   background-color: #0a192f;
   font-family: "Roboto Mono", monospace;
+  margin: 0;
 }
 
 /* .header-grid-main-wrap {
@@ -44,7 +45,7 @@
   background-color: #111f35;
   padding-top: 20px;
   padding-bottom: 20px;
-  z-index: 5;
+  z-index: 100;
   height: 70px;
   width: 100vw;
 }
@@ -102,7 +103,7 @@
 
 #landing-left-column {
   display: grid;
-  margin-top: 100px;
+  margin-top: 90px;
   grid-template-rows: 1fr;
   height: 65vh;
   background-color: transparent;
@@ -113,7 +114,6 @@
   align-self: top;
   justify-self: center;
   margin-left: 50px;
-  margin-top: 10px;
   grid-row-gap: 10px;
   width: 80%;
   height: fit-content;
@@ -148,12 +148,10 @@
 #projects-wrap {
   position: relative;
   display: grid;
-
   justify-self: start;
   align-content: start;
   grid-template-columns: 1fr;
   grid-row-gap: 100px;
-  /* overflow-y: scroll; */
   background-color: transparent;
   margin-bottom: 100px;
 }
@@ -204,6 +202,7 @@
   text-align: center;
   background-color: transparent;
   height: fit-content;
+  grid-template-rows: auto;
 }
 
 @keyframes fade-in-left {
@@ -242,19 +241,21 @@
   position: relative;
   display: grid;
   margin-top: 30px;
-  align-content: start;
+  align-self: start;
   grid-template-columns: 1fr;
-  grid-row-gap: 5px;
+  grid-template-rows: auto;
+  grid-row-gap: 15px;
   background-color: transparent;
   right: 20px;
   opacity: 0;
+  width: fit-content;
+  height: fit-content;
 }
 
 .image-wrapper {
   position: relative;
   /* background-color: RGB(29, 72, 83); */
 
-  top: 10%;
   width: fit-content;
   max-height: 300px;
   border-radius: 5px;
@@ -283,17 +284,31 @@
 
 .project-title-container {
   display: grid;
-  grid-template-rows: 0px;
-  grid-row-gap: 50px;
+  grid-template-rows: auto;
   background-color: transparent;
+  height: fit-content;
+  grid-row-gap: 10px;
 }
 
 .project-title {
-  color: RGB(204, 214, 246);
-  width: fit-content;
-  height: fit-content;
+  color: white;
+  display: inline-block;
   font-weight: bold;
   justify-self: end;
+  background-color: transparent;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.project-subtitle {
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  justify-self: end;
+  background-color: transparent;
+  font-size: 18px;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .project-description {
@@ -301,7 +316,7 @@
   text-align: center;
   color: RGB(204, 214, 246);
   width: auto;
-  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  box-shadow: 1px 1px 16px 0px #121d30;
   padding: 20px;
   font-size: 14px;
   background-color: #112240;
@@ -311,18 +326,29 @@
 }
 
 .project-technologies {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 20px;
+  display: flex;
+  column-gap: 30px;
   color: white;
   justify-self: end;
-  width: max-content;
-  height: 50px;
+  width: auto;
+  height: auto;
 }
 
 .technology {
   width: fit-content;
   height: fit-content;
+  background-color: transparent;
+}
+
+.project-github-images-wrapper {
+  display: flex;
+  background-color: transparent;
+  justify-content: end;
+}
+
+.project-github-image {
+  width: 23px;
+  height: 23px;
 }
 
 /*PROJECT INVERSE STYLING */
@@ -344,6 +370,7 @@
   margin-top: 30px;
   opacity: 0;
   z-index: 3;
+  grid-row-gap: 15px;
 }
 
 #inverse-project-column-right {
@@ -361,8 +388,6 @@
 .inverse-image-wrapper {
   position: relative;
   /* background-color: RGB(29, 72, 83); */
-
-  top: 10%;
   width: fit-content;
   max-height: 300px;
   border-radius: 5px;
@@ -391,17 +416,30 @@
 
 .inverse-project-title-container {
   display: grid;
-  grid-template-rows: 0px;
-  grid-row-gap: 50px;
+  grid-template-rows: auto;
   background-color: transparent;
+  height: fit-content;
+  grid-row-gap: 10px;
 }
 
 .inverse-project-title {
-  color: RGB(204, 214, 246);
+  color: white;
   width: fit-content;
   height: fit-content;
   font-weight: bold;
   justify-self: start;
+  background-color: transparent;
+}
+
+.inverse-project-subtitle {
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  justify-self: start;
+  background-color: transparent;
+  font-size: 18px;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .inverse-project-description {
@@ -409,7 +447,7 @@
   text-align: center;
   color: RGB(204, 214, 246);
   width: auto;
-  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  box-shadow: 1px 1px 16px 0px #121d30;
   padding: 20px;
   font-size: 14px;
   background-color: #112240;
@@ -419,13 +457,18 @@
 }
 
 .inverse-project-technologies {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 20px;
+  display: flex;
   color: white;
   justify-self: start;
-  width: max-content;
-  height: 50px;
+  gap: 30px;
+  width: auto;
+  height: auto;
+}
+
+.inverse-project-github-images-wrapper {
+  display: flex;
+  background-color: transparent;
+  justify-content: start;
 }
 
 .span {
@@ -491,13 +534,13 @@
   #landing-main-wrap {
     display: grid;
     grid-template-columns: 100vw;
-    right: 0vw;
+    right: 0;
     transition: right 700ms ease-in;
   }
 
   #landing-left-column {
     display: grid;
-    margin-top: 100px;
+    margin-top: 30px;
     grid-template-rows: 1fr;
     height: 10vh;
     background-color: transparent;
@@ -559,14 +602,13 @@
 
   #projects-wrap {
     justify-self: center;
-
     grid-row-gap: 30px;
   }
 
   .project {
-    display: block;
+    /* display: relative; */
     text-align: center;
-
+    display: inline;
     height: fit-content;
   }
 
@@ -575,12 +617,15 @@
     top: 0;
     display: grid;
     right: 0;
+    grid-row-gap: 30px;
+    padding: 30px;
   }
 
   #project-column-left {
     position: relative;
     top: 0;
     display: block;
+    width: 100%;
   }
 
   .project-title-container {
@@ -597,7 +642,7 @@
     background-color: RGB(12, 32, 52);
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.2;
   }
 
   .project-image {
@@ -625,7 +670,9 @@
 
   #inverse-project-column-left {
     position: absolute;
-    display: block;
+    display: grid;
+    grid-row-gap: 20px;
+    padding: 30px;
   }
 
   #inverse-project-column-right {
@@ -649,7 +696,7 @@
     background-color: RGB(12, 32, 52);
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.2;
   }
 
   .inverse-project-image {
@@ -671,6 +718,10 @@
     justify-self: start;
   }
 
+  .project-github-images-wrapper {
+    justify-content: start;
+  }
+
   .page-under-dev-header {
     font-size: 20px;
   }
@@ -678,13 +729,14 @@
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
   #navigation-main-wrap {
-    opacity: 0;
+    display: none;
   }
 
   #landing-main-wrap {
     display: grid;
     grid-template-columns: 100vw;
     right: 0;
+    margin-top: 20px;
     transition: right 700ms ease-in;
     min-width: 0;
   }
@@ -718,21 +770,17 @@
   }
 
   .project {
-    display: block;
-
-    width: 90%;
+    text-align: center;
+    display: inline;
     height: fit-content;
-    min-width: 0;
-    background-color: transparent;
-    justify-self: center;
   }
 
   #project-column-right {
     position: absolute;
-    display: block;
-    min-width: 250px;
     top: 0;
+    display: grid;
     right: 0;
+    grid-row-gap: 30px;
   }
 
   #project-column-left {
@@ -779,6 +827,10 @@
     background-color: transparent;
   }
 
+  .project-subtitle {
+    font-size: 14px;
+  }
+
   .project-description {
     background-color: transparent;
     text-align: center;
@@ -786,14 +838,15 @@
     color: white;
     margin-right: 0px;
     height: auto;
+    font-size: 12px;
   }
 
   .project-technologies {
-    display: grid;
+    display: flex;
     background-color: transparent;
     justify-self: center;
     height: auto;
-    width: 100%;
+    gap: 15px;
     min-width: 0;
   }
 
@@ -805,8 +858,8 @@
 
   #inverse-project-column-left {
     position: absolute;
-    display: block;
-    min-width: 250px;
+    display: grid;
+    grid-row-gap: 20px;
   }
 
   #inverse-project-column-right {
@@ -824,6 +877,17 @@
     font-weight: bold;
     justify-self: center;
     background-color: transparent;
+  }
+
+  .inverse-project-subtitle {
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    height: auto;
+    font-size: 14px;
+    min-width: 0px;
+    width: 100%;
+    white-space: wrap;
   }
 
   .inverse-image-wrapper {
@@ -848,17 +912,22 @@
     color: white;
     margin-right: 20px;
     height: auto;
+    font-size: 12px;
   }
 
   .inverse-project-technologies {
+    display: flex;
     background-color: transparent;
     justify-self: center;
     height: auto;
-    width: 100%;
+    gap: 15px;
     min-width: 0;
   }
 
   .page-under-dev-header {
     font-size: 12px;
+  }
+  .inverse-project-github-images-wrapper {
+    justify-content: end;
   }
 }

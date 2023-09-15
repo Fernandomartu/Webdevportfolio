@@ -44,7 +44,12 @@ let fadeInElements = () => {
     }, 16000); // Adjust the delay (in milliseconds) as needed
   } else {
     // Check if the <link> element was found
-    linkElement.href = "./css/style-two.css";
+    // linkElement.href = "./css/style-two.css";
+    projectHeader.style.opacity = 1;
+    projectColumnRight.style.opacity = 1;
+    projectColumnLeft.style.opacity = 1;
+    inverseProjectColumnLeft.style.opacity = 1;
+    inverseProjectColumnRight.style.opacity = 1;
     nameWrap.innerHTML = "Fernando Marturet";
     descPara.innerHTML =
       "Self taught developer with Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
