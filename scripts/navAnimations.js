@@ -11,16 +11,23 @@ let servicesTab = false;
 
 underlineOffset = 3;
 
+let disableAnimation = () => {
+  underliner.style.transition = "";
+};
+
 let generateUnderliner = () => {
+  underliner.style.transition = "all 600ms ease-in";
   underliner.style.left = navOption[0].getBoundingClientRect().left + 37 + "px";
   setTimeout(function () {
     underliner.style.width =
       navOption[0].getBoundingClientRect().width + 5 + "px";
     underliner.style.left = underliner.getBoundingClientRect().left - 40 + "px";
   }, 200);
+  underliner.style.transition = "";
 };
 
 let moveUnderlineOne = () => {
+  underliner.style.transition = "all 600ms ease-in";
   underliner.style.left =
     navOption[0].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
@@ -31,9 +38,13 @@ let moveUnderlineOne = () => {
   servicesTab = false;
   contactTab = false;
   projectsTab = false;
+  setTimeout(function () {
+    disableAnimation();
+  }, 600);
   return aboutMeTab, projectsTab, servicesTab, contactTab;
 };
 let moveUnderlineTwo = () => {
+  underliner.style.transition = "all 600ms ease-in";
   underliner.style.left =
     navOption[1].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
@@ -43,11 +54,15 @@ let moveUnderlineTwo = () => {
   contactTab = false;
   aboutMeTab = false;
   servicesTab = false;
+  setTimeout(function () {
+    disableAnimation();
+  }, 600);
   console.log(aboutMeTab, projectsTab, servicesTab, contactTab);
   return aboutMeTab, projectsTab, servicesTab, contactTab;
 };
 
 let moveUnderlineThree = () => {
+  underliner.style.transition = "all 600ms ease-in";
   underliner.style.left =
     navOption[2].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
@@ -57,11 +72,15 @@ let moveUnderlineThree = () => {
   contactTab = false;
   projectsTab = false;
   aboutMeTab = false;
+  setTimeout(function () {
+    disableAnimation();
+  }, 600);
   console.log(aboutMeTab, projectsTab, servicesTab, contactTab);
   return aboutMeTab, projectsTab, servicesTab, contactTab;
 };
 
 let moveUnderlineFour = () => {
+  underliner.style.transition = "all 600ms ease-in";
   underliner.style.left =
     navOption[3].getBoundingClientRect().left - underlineOffset + "px";
   underliner.style.width =
@@ -71,6 +90,9 @@ let moveUnderlineFour = () => {
   servicesTab = false;
   projectsTab = false;
   aboutMeTab = false;
+  setTimeout(function () {
+    disableAnimation();
+  }, 600);
   console.log(aboutMeTab, projectsTab, servicesTab, contactTab);
   return aboutMeTab, projectsTab, servicesTab, contactTab;
 };
