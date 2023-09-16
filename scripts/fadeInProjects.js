@@ -1,6 +1,12 @@
 let projectHeader = document.getElementById("projects-header-wrap");
 let projectColumnRight = document.getElementById("project-column-right");
 let projectColumnLeft = document.getElementById("project-column-left");
+let projectThreeColumnRight = document.getElementById(
+  "project-three-column-right"
+);
+let projectThreeColumnLeft = document.getElementById(
+  "project-three-column-left"
+);
 let inverseProjectColumnLeft = document.getElementById(
   "inverse-project-column-left"
 );
@@ -42,6 +48,13 @@ let fadeInElements = () => {
       inverseProjectColumnRight.style.animation =
         "fade-in-right 1s ease forwards";
     }, 16000); // Adjust the delay (in milliseconds) as needed
+    setTimeout(function () {
+      projectThreeColumnLeft.style.animation = "fade-in-right 1s ease forwards";
+    }, 18000); // Adjust the delay (in milliseconds) as needed
+    setTimeout(function () {
+      projectThreeColumnRight.style.animation =
+        "fade-in-right 1s ease forwards";
+    }, 20000); // Adjust the delay (in milliseconds) as needed
   } else {
     // Check if the <link> element was found
     // linkElement.href = "./css/style-two.css";
@@ -50,6 +63,8 @@ let fadeInElements = () => {
     projectColumnLeft.style.opacity = 1;
     inverseProjectColumnLeft.style.opacity = 1;
     inverseProjectColumnRight.style.opacity = 1;
+    projectThreeColumnLeft.style.opacity = 1;
+    projectThreeColumnRight.style.opacity = 1;
     nameWrap.innerHTML = "Fernando Marturet";
     descPara.innerHTML =
       "Self taught developer with Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
