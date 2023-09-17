@@ -272,10 +272,6 @@
   transition: opacity 500ms linear 0s;
 }
 
-.image-wrapper:hover {
-  border: 1px solid RGB(29, 72, 83);
-}
-
 .image-wrapper:hover .project-image {
   opacity: 1; /* Change to 1 to represent 100% on hover */
   cursor: pointer;
@@ -317,10 +313,11 @@
   width: auto;
   padding: 20px;
   font-size: 14px;
-  background-color: transparent;
   z-index: 2;
   max-width: 100%;
   font-weight: bold;
+  background-color: #112240;
+  box-shadow: 1px 1px 16px 0px #121d30;
 }
 
 .project-technologies {
@@ -336,6 +333,7 @@
   width: fit-content;
   height: fit-content;
   background-color: transparent;
+  color: RGB(93, 238, 206);
 }
 
 .project-github-images-wrapper {
@@ -344,13 +342,24 @@
   justify-content: end;
 }
 
-.project-github-image {
-  width: 23px;
-  height: 23px;
+.git-svg-wrap {
   background-color: transparent;
+  width: fit-content;
+  height: fit-content;
 }
 
-.project-github-image:hover {
+.git-svg {
+  width: 25px;
+  height: 25px;
+}
+
+.git-svg path {
+  transition: fill 0.3s ease;
+}
+
+.git-svg-wrap:hover .git-svg path,
+.git-svg-wrap {
+  fill: RGB(93, 238, 206);
   cursor: pointer;
 }
 
@@ -406,10 +415,6 @@
   height: auto;
   inset: 0px;
   transition: opacity 500ms linear 0s;
-}
-
-.inverse-image-wrapper:hover {
-  border: 1px solid RGB(29, 72, 83);
 }
 
 .inverse-image-wrapper:hover .inverse-project-image {
@@ -616,6 +621,23 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .project:hover {
+    /* display: relative; */
+    cursor: pointer;
+  }
+
+  .project:hover .image-wrapper {
+    /* display: relative; */
+    border: 1px solid RGB(93, 238, 206);
+    opacity: 0.3;
+  }
+
+  .project:hover .inverse-image-wrapper {
+    /* display: relative; */
+    border: 1px solid RGB(93, 238, 206);
+    opacity: 0.3;
+  }
+
   .project-column-left,
   .project-column-right {
     grid-row: 1/2;
@@ -667,6 +689,7 @@
     padding: 0px;
     color: white;
     margin-right: 20px;
+    box-shadow: none;
   }
 
   .project-technologies {
@@ -788,6 +811,10 @@
     left: 0px;
   }
 
+  #projects-header {
+    font-size: 18px;
+  }
+
   #projects-wrap {
     grid-row-gap: 30px;
   }
@@ -798,6 +825,23 @@
     height: fit-content;
     left: 0px;
     margin-left: 0px;
+  }
+
+  .project:hover {
+    /* display: relative; */
+    cursor: pointer;
+  }
+
+  .project:hover .image-wrapper {
+    /* display: relative; */
+    border: 1px solid RGB(93, 238, 206);
+    opacity: 0.3;
+  }
+
+  .project:hover .inverse-image-wrapper {
+    /* display: relative; */
+    border: 1px solid RGB(93, 238, 206);
+    opacity: 0.3;
   }
 
   .project-column-left,
@@ -871,6 +915,7 @@
     margin-right: 0px;
     height: auto;
     font-size: 12px;
+    box-shadow: none;
   }
 
   .project-technologies {

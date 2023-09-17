@@ -1,6 +1,6 @@
 let descMessage =
   "Self taught developer with Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
-let aboutMeText = "About Me";
+let aboutMeText = "Home";
 let projectsText = "Projects";
 let servicesText = "Services";
 let contactMeText = "Contact Me";

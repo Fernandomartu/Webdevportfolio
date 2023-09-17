@@ -4,6 +4,15 @@ let mainBodyWrap = document.getElementById("main-body-wrap");
 // let navMainWrap = document.getElementById("navigation-main-wrap");
 // let viewWidth = navMainWrap.clientWidth;
 
+const urlParams = new URLSearchParams(window.location.search);
+
+const url = new URL(window.location.href);
+let page = urlParams.get("page");
+
+url.searchParams.set("page", "About-Me");
+
+window.history.replaceState({}, "", url);
+
 let aboutMeTab = true;
 let projectsTab = false;
 let contactTab = false;
@@ -33,7 +42,6 @@ let moveUnderlineOne = () => {
   underliner.style.width =
     navOption[0].getBoundingClientRect().width + 5 + "px";
   mainBodyWrap.style.right = "0vw";
-  console.log("running this");
   aboutMeTab = true;
   servicesTab = false;
   contactTab = false;

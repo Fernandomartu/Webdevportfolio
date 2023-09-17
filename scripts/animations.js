@@ -71,7 +71,6 @@ let textAnimMain = (string, wrapDivName, timeout) => {
     let i = 0;
     letters[i].textContent = "_";
     let changeText = () => {
-      console.log(i);
       console.log(text.length);
       letters[i].style.display = "inline";
       letters[i].textContent = text[i];
@@ -82,7 +81,6 @@ let textAnimMain = (string, wrapDivName, timeout) => {
 
       i++;
       if (i == text.length) {
-        console.log("i is " + i);
         clearInterval(timer);
         pulsateUnderscoreFinal(letters, i);
       }
