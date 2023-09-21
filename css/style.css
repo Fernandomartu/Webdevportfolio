@@ -817,7 +817,7 @@
   }
 
   #projects-wrap {
-    grid-row-gap: 30px;
+    grid-row-gap: 15px;
   }
 
   .project {
