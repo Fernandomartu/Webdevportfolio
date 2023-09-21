@@ -982,6 +982,10 @@
     white-space: wrap;
   }
 
+  #project-two-subtitle {
+    max-width: 200px;
+  }
+
   .inverse-image-wrapper {
     position: relative;
     background-color: RGB(12, 32, 52);
