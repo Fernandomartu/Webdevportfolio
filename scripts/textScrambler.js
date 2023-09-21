@@ -13,15 +13,6 @@ let contactMeDiv = document.getElementById("Contact Me");
 
 let navigationMainWrap = document.getElementById("navigation-main-wrap");
 
-const screenWidth = window.innerWidth;
-
-// Check if the screen width is greater than 450px
-if (screenWidth > 450) {
-  navigationMainWrap.style.display = "grid";
-} else {
-  navigationMainWrap.style.display = "none"; // or any other value you prefer
-}
-
 let loadNextAnim = () => {
   const script = document.createElement("script");
   script.src = "./scripts/navAnimations.js";
