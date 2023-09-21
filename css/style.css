@@ -862,7 +862,7 @@
     display: grid;
     right: 0;
     grid-row-gap: 30px;
-    padding: 30px;
+    padding: 15px;
     width: 100%;
     grid-column: 1/3;
   }
@@ -944,7 +944,7 @@
     display: grid;
     right: 0;
     grid-row-gap: 30px;
-    padding: 30px;
+    padding: 15px;
     width: 100%;
     grid-column: 1/3;
   }
