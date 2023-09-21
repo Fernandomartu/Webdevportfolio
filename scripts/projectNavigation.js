@@ -3,7 +3,7 @@ let projects = document.getElementsByClassName("project");
 projects[0].onclick = function () {
   if (window.innerWidth <= 800) {
     window.open(
-      "https://mern-social-media-frontend-15rx.onrender.com/",
+      "https://github.com/Fernandomartu/MERN-portfolio-project",
       "_blank"
     );
   } else return;
