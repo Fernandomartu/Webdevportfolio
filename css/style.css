@@ -361,6 +361,7 @@
 .git-svg-wrap {
   fill: RGB(93, 238, 206);
   cursor: pointer;
+  z-index: 100;
 }
 
 /*PROJECT INVERSE STYLING */
