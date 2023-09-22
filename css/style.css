@@ -980,6 +980,7 @@
     min-width: 0px;
     max-width: 100%;
     white-space: wrap;
+    justify-self: center;
   }
 
   .inverse-image-wrapper {
