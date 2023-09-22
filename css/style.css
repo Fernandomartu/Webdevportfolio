@@ -594,6 +594,10 @@
     background-color: transparent;
   }
 
+  #name-desc-wrap {
+    justify-self: start;
+  }
+
   #name-wrap {
     justify-self: start;
     font-size: 35px;
@@ -817,7 +821,7 @@
   }
 
   #projects-header {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   #projects-wrap {
@@ -865,7 +869,7 @@
     top: 0;
     display: grid;
     right: 0;
-    grid-row-gap: 30px;
+    grid-row-gap: 20px;
     padding: 15px;
     width: 100%;
     grid-column: 1/3;
@@ -947,10 +951,11 @@
     top: 0;
     display: grid;
     right: 0;
-    grid-row-gap: 30px;
+    grid-row-gap: 20px;
     padding: 15px;
     width: 100%;
     grid-column: 1/3;
+    left: 0;
   }
 
   #inverse-project-column-right {
