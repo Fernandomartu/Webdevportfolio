@@ -955,7 +955,7 @@
 
   #inverse-project-column-right {
     top: 0;
-    display: block;
+    display: grid;
     width: 100%;
     grid-column: 1/3;
     left: 0px;
@@ -978,13 +978,8 @@
     height: auto;
     font-size: 14px;
     min-width: 0px;
-    width: 100%;
+    max-width: 100%;
     white-space: wrap;
-  }
-
-  #project-two-subtitle {
-    max-width: 200px;
-    text-align: center;
   }
 
   .inverse-image-wrapper {
