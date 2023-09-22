@@ -979,7 +979,7 @@
     font-size: 14px;
     min-width: 0px;
     max-width: 100%;
-    white-space: wrap;
+    white-space: normal;
     justify-self: center;
   }
 
