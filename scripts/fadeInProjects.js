@@ -68,7 +68,7 @@ let fadeInElements = () => {
     nameWrap.innerHTML = "Fernando Marturet";
     descPara.innerHTML =
       "Self taught developer with Knowledge of HTML, CSS, Javascript, MySQL, Bubble.io and other technologies. Feel free to browse through my projects :)";
-    aboutNav.innerHTML = "About Me";
+    aboutNav.innerHTML = "Home";
     projectsNav.innerHTML = "Projects";
     servicesNav.innerHTML = "Services";
     contactNav.innerHTML = "Contact Me";
